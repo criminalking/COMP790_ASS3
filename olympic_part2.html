@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" 
+		height="400" style="border:1px solid #000;">
+		
+	<script type="text/javascript" src="Olympic.js"></script>
+
+	<script type="text/javascript">
+		$(window).bind("load", function() {
+		
+			//Variables representing the canvas and the canvas' context (the context is used for actually drawing on the canvas)
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			
+			//The olympic symbols that we will be drawing on the canvas
+			var symbols = [];
+			symbols.push(new Olympic(context));
+            symbols.push(new Olympic(context, 100, 100, 1, 0.02));
+			
+			//start drawing the first frame
+			requestAnimationFrame(mainLoop);
+			
+			//Game Loop
+			function mainLoop() {
+				update();
+				draw();
+				requestAnimationFrame(mainLoop); //keep reiterating through this loop
+			}
+			
+			function update() {
+				symbols.forEach(function(c) { c.update();})	
+			}
+			
+			function draw() {
+				context.clearRect(0, 0, canvas.width, canvas.height);			
+				symbols.forEach(function(c) { c.draw(); })
+			}
+		
+		});
+	</script>
+	</body>
+</html>
