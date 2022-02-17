@@ -11,7 +11,8 @@ To apply transformations to a hierarchical model, I translate the whole olympic 
 ![olympic_gif](olympic_part2.gif)
 
 ## Assignment 4 - Part 1: Add user interaction
-The player is supposed to click 'a' key when the gap in olympic rings points directly to the right. If successful, the screen will show that the player scored 100 points, otherwise, it will show "Try again".
+The player is supposed to click 'space' when the gap in olympic rings points directly to the bottom. If successful, the screen will show that the player scored 100 points. :page_facing_up: olympic_part3.html
 
+![olympic_gif](olympic_part3.gif)
 
 ## Assignment 4 - Part 2: Implement fixed-time step, variable rendering loop
